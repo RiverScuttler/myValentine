@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <title>My Valentine</title>
+        <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                font-family: monospace;
+                background-color: #eee;
+                margin-top: 20px;
+            }
+            .cont{
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 200px;
+                width: 380px;
+                margin: 60px auto 20px;
+                
+            }
+            .gif{
+                height: 200px;
+                width: 150px;
+            }
+            .text-cont{
+                
+                height: 50px;
+                width: 100%;
+                text-align: center;
+                padding-top: 16px;
+                /* margin-top: 10px; */
+                font-size: 25px;
+                font-weight: 900;
+                color: #f00;
+            }
+            #yesBTN{
+                height: 50px;
+                width: 150px;
+                font-size: 20px;
+                font-weight: 700;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: #0c0;
+                background-color: #d00;
+                border-radius: 5px;
+                border: hidden;
+            }
+            #noBTN{
+                height: 30px;
+                width: 60px;
+                font-size: 17px;
+                font-weight: 400;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: #eee;
+                background-color: #ddd;
+                border: hidden;
+                border-radius: 5px;
+            }
+            #yesBTN:hover{
+                box-shadow: 0 0 2px rgb(158, 1, 1),
+                            0 0 6px #f00;
+                text-shadow: 0 0 3px #fff;
+                cursor: pointer;
+                transition: 0.4s;
+                border: 1px solid #949292;
+            }
+            #noBTN:hover{
+                background-color: #bbb;
+                box-shadow: 0 0 4px #000;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+             #noBTN:active, #yesBTN:active{
+                transform: scale(0.8);
+                transition-duration: .4s;
+            }
+
+            #hid{
+                
+                height: 150px;
+                width: 200px;
+                position: absolute;
+                z-index: 2;
+                top: 70px;
+                visibility: hidden;
+            }
+
+            /* inlove */
+            #inlove{
+                height: 300px;
+                width: 350px;
+                position: absolute;
+                top: 10px;
+                visibility: hidden;
+                z-index: 6;
+            }
+            #hearts{
+                height: 300px;
+                position: absolute;
+                bottom: 40px;
+                visibility: hidden;
+            }
+
+            #checks{
+                
+                height: 50px;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                position: absolute;
+                top: 300px;
+                visibility: hidden;
+            }
+            #checks:hover{
+                cursor:pointer;
+            }
+
+            input{
+                height: 20px;
+                width: 20px;
+            }
+            #one, #two{
+                font-size: 25px;
+                font-weight: 700;
+            }
+            #one{
+                color: #bbb;
+            }
+            #two{
+                color: rgb(216, 0, 0);
+            }
+
+            /* cry */
+            #cry{
+                
+                height: 150px;
+                width: 200px;
+                position: absolute;
+                z-index: 3;
+                top: 70px;
+                visibility: hidden;
+            }
+
+            /* lonely */
+            #lonely{
+                height: 350;
+                width: 350px;
+                position: absolute;
+                top: 70px;
+                visibility: hidden;
+                z-index: 4;
+            }
+
+            /* ugly */
+            #ugly{
+                width: 450px;
+                height: 230px;
+                position: absolute;
+                top: 10px;
+                visibility: hidden;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div class="cont">
+            <div class="gif">
+                <div style="width:100%;height:0;padding-bottom:100%;position:relative;">
+                    <div id="icebear"><iframe src="https://giphy.com/embed/Ri98Ht4Q9hczOeHC1E" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+                </div>
+            </div>
+            <div class="text-cont" id="textcont">Will you be my Valentine?</div>
+        </div>
+        <button id="yesBTN" onclick="yesFunc()">YES</button>
+        <button id="noBTN" onclick="noFunc()">NO</button>
+
+        <!-- Good Ending -->
+        <!-- inlove -->
+        <div id="inlove"><iframe src="https://giphy.com/embed/KztT2c4u8mYYUiMKdJ" width="100%" height="100%" frameBorder="0" allowFullScreen></iframe></div>
+        <div id="hearts"><iframe src="https://giphy.com/embed/xTcnT2ZYSaCTdkTSmI" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+        <!-- sad -->
+        <div id="hid"><iframe src="https://giphy.com/embed/vv1GF8Vq7otiolIyBn" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+        <!-- check -->
+        <div id="checks">
+            <div id="one"><input type="checkbox" id="checkYes">Yes</input></div>
+            <div id="two"><input type="checkbox" id="checkNo">No</input></div>
+        </div>
+
+        <!-- crying -->
+        <div id="cry"><iframe src="https://giphy.com/embed/gFWR2g8YFkvCFebkLm" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+        <!-- lonely -->
+        <div id="lonely"><iframe src="https://giphy.com/embed/FwMKXv1DQfZwn56lJO" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p></div>
+
+        <div id="ugly"><iframe src="https://giphy.com/embed/8boMf1VXVHoJy" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+
+        <!-- JAVASCRIPT -->
+        <script>
+            
+            function yesFunc(){
+                 document.getElementById("textcont").innerHTML = "";
+                 // no btn
+                 document.getElementById('noBTN').style.visibility = "hidden";
+                 // icebear
+                 document.getElementById('icebear').style.visibility = "hidden";
+                 // yes btn
+                 document.getElementById('yesBTN').style.visibility = "hidden";
+                //  inlove
+                 document.getElementById('inlove').style.visibility = "visible";
+                 document.getElementById('hearts').style.visibility = "visible";
+                 document.body.style.background = "#fff";
+            }
+
+
+            function noFunc(){
+                 document.getElementById("textcont").innerHTML = "Is that because I'm ugly?";
+                 document.getElementById('hid').style.visibility = "visible";
+                 // no btn
+                 document.getElementById('noBTN').style.visibility = "hidden";
+                 // icebear
+                 document.getElementById('icebear').style.visibility = "hidden";
+                 // yes btn
+                 document.getElementById('yesBTN').style.visibility = "hidden";
+                // checks
+                 setTimeout(() => {
+                    document.getElementById('checks').style.visibility = "visible";
+                 }, 1000);
+             }
+            
+             // checkbox
+
+            //  Interval
+           
+
+             document.getElementById("checkYes").addEventListener('change', update);
+             document.getElementById("checkNo").addEventListener('change', update);
+
+             function update(){
+                var textcont = document.getElementById("textcont");
+                var checkYes = document.getElementById("checkYes");
+                var checkNo = document.getElementById("checkNo");
+                
+                    
+
+                if(checkYes.checked == true){
+                    textcont.textContent = "I know.";
+                    document.getElementById('cry').style.visibility = "visible";
+                    document.getElementById('hid').style.visibility = "hidden";
+                    
+                    setTimeout( function timer(){
+                        textcont.textContent = "Sorry to bother you."; 
+                    }, 2500)
+                    setTimeout(() => {
+
+                        textcont.textContent = "I will now just live my lonely life."; 
+                    }, 5000);
+                    document.getElementById("two").style.visibility = "hidden";
+                    setTimeout(() => {
+                        document.getElementById("one").style.visibility = "hidden";
+                    }, 1500);
+                    setTimeout(() => {
+                        document.getElementById('cry').style.visibility = "hidden";
+                        document.getElementById("lonely").style.visibility = "visible";
+                        document.body.style.background = "#fff";
+                    }, 7000);
+
+                    
+                } else if(checkNo.checked == true){
+                    document.getElementById("ugly").style.visibility = "visible";
+                    document.getElementById('hid').style.visibility = "hidden";
+                    document.getElementById("textcont").innerHTML = "I understand.";
+                    setTimeout(() => {
+                        document.getElementById("textcont").innerHTML = "I know that no one will like me.";
+                    }, 2300);
+                    document.getElementById("one").style.visibility = "hidden";
+                    setTimeout(() => {
+                        document.getElementById("two").style.visibility = "hidden";
+                    }, 1000);
+                    setTimeout(() => {
+                        document.getElementById("textcont").innerHTML = "";
+                    }, 4500);
+                }
+             }
+
+        </script>
+    </body>
+</html>
+
